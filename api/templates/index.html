@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+{% set static_url = url_for('static', filename='') %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ static_url }}style/reset.css">
+    <link rel="stylesheet" href="{{ static_url }}style/responsive.css">
+    <link rel="stylesheet" href="{{ static_url }}style/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <title>Flask Weather</title>
+</head>
+
+<body class="flex column">
+
+    <header class="flex">
+
+        <i class="bi bi-geo-alt-fill"></i>
+
+        <form action="/weather" method="post" class="flex">
+
+            {% if informacoes_clima %}
+            <img id="bandeira-icon" src="https://flagsapi.com/{{informacoes_clima.pais}}/shiny/32.png" alt="bandeira">
+            {% endif %}
+
+            <input type="text" name="cidade" placeholder="Buscar Cidade"
+                value="{% if informacoes_clima %}{{informacoes_clima.estado}}{% endif %}" autocomplete="off" required>
+            <button type="submit" id="btnEnviar"><i class="bi bi-search"></i></button>
+
+        </form>
+
+    </header>
+
+    <main class="flex column">
+
+        {% if informacoes_clima %}
+
+        <div class="info-clima">
+
+            <div class="temperatura">
+                <p>{{ informacoes_clima.temperatura }} °C</p>
+            </div>
+
+            <div class="descricao flex">
+                <p>{{informacoes_clima.condicoes_ceu}}</p>
+                <span><img src="https://openweathermap.org/img/wn/{{informacoes_clima.icon}}.png" class="img-icon"
+                        alt="icon"></span>
+            </div>
+
+        </div>
+
+        <div class="semicirculo flex">
+
+            <div class="detalhes-clima flex">
+
+                <div class="infos">
+
+                    <div class="text flex">
+                        <span><i class="bi bi-wind"></i></span>
+                        <p>{{informacoes_clima.velocidade_vento}}<span>km</span></p>
+                    </div>
+
+                </div>
+
+                <div class="infos">
+
+                    <div class="text flex">
+                        <span><i class="bi bi-droplet-fill"></i></span>
+                        <p>{{informacoes_clima.umidade}}<span>%</span></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    {% elif erro %}
+
+    <div class="erro flex column">
+        <img src="{{ static_url }}img/notFound.png" alt="not found">
+        <p>Oops! Cidade não encontrada</p>
+    </div>
+
+    {% endif %}
+
+</body>
+
+</html>

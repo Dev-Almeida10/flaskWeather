@@ -1,0 +1,14 @@
+@media (max-width: 420px) {
+
+    header{
+        margin: 0rem 2rem 0rem 2rem;
+    }
+
+    main {
+        margin: 0rem 2rem 0rem 2rem;;
+    }
+    
+    #bandeira-icon {
+        margin-left: 1rem;
+    }
+}

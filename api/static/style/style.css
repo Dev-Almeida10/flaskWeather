@@ -1,0 +1,148 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+body {
+    height: 100vh;
+    gap: 15px;
+    background-color: #d4dce9;
+    color: #ffffff;
+}
+
+header {
+    gap: 15px;
+    background-color: #26282e;
+    padding: 29px 35px;
+    border-radius: 25px;
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+header>i {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+header form {
+    width: 100%;
+}
+
+header form>input {
+    width: 100%;
+    border: 2px solid #ffffff;
+    border-width: 2px 0 2px 2px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 8px 10px 8px 8px;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    outline: none;
+}
+
+header form>input::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+header form>button {
+    cursor: pointer;
+    width: 50px;
+    background-color: #ffffff;
+    color: #4f4f4f;
+    border: 2px solid #ffffff;
+    border-width: 2px 0 2px 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 16px;
+    padding: 8px 10px 8px 8px;
+    transition: 0.4s ease-out;
+}
+
+header form>button:hover {
+    text-shadow: 0px 0px 9px #6c6c72;
+}
+
+main {
+    position: relative;
+    background-color: #26282eef;
+    width: 400px;
+    height: 400px;
+    gap: 3.9rem;
+    padding: 29px 39px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+}
+
+.info-clima {
+    margin-top: -115px;
+}
+
+.temperatura {
+    font-size: 70px;
+    margin-left: 15px;
+}
+
+.info-clima .descricao {
+    font-size: 27px;
+    margin-top: 20px;
+    margin-left: 15px;
+    gap: 12px;
+    text-transform: capitalize;
+}
+
+.semicirculo {
+    position: absolute;
+    background-color: #26282e;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 19.5em;
+    margin-top: 45em;
+}
+
+.detalhes-clima {
+    position: absolute;
+    gap: 80px;
+    margin-top: -72%;
+    color: #ffffff;
+}
+
+.detalhes-clima .text {
+    gap: 17px;
+}
+
+.detalhes-clima .text>p {
+    font-size: 30px;
+}
+
+.detalhes-clima .text>span {
+    font-size: 31px;
+}
+
+.detalhes-clima .text p>span {
+    font-size: 22px;
+}
+
+.erro {
+    font-size: 20px;
+    gap: 35px;
+}
+
+.erro img {
+    width: 190px;
+}
+
+#bandeira-icon {
+    position: absolute;
+    margin-left: 7rem;
+    margin-top: -1px;
+}
