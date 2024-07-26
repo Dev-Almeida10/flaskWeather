@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import requests
+import requests, os
 
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ def homepage():
 @app.route("/weather", methods=['POST'])
 def api_clima():
 
-    api_chave = '885c0cf1895ad0adb880824d152d27b6'
+    api_chave = os.eviron['chave']
     cidade_user = request.form['cidade']
 
     api_link = f'https://api.openweathermap.org/data/2.5/weather?q={cidade_user}&appid={api_chave}&lang=pt_br'
